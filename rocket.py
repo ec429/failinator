@@ -21,7 +21,7 @@ SoyuzU = RocketFamily(784, 20, 'Soyuz U')
 AtlasV = RocketFamily(64, 1, 'Atlas V')
 Ariane5 = RocketFamily(87, 4, 'Ariane 5')
 DeltaII = RocketFamily(153, 2, 'Delta II')
-DeltaIV = RocketFamily(33, 0, 'Delta IV') # 1 partial failure, but primary payload reached target orbit
+DeltaIV = RocketFamily(33, 1, 'Delta IV') # DemoSat reached incorrect orbit
 
 families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane5, DeltaII, DeltaIV]
 
