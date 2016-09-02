@@ -8,6 +8,7 @@ def setup_plot():
     fig = plt.figure()
     ax_lr = fig.add_subplot(2,1,1)
     ax_lr.set_xticks(xrange(21))
+    ax_lr.set_ylim(0, 75)
     ax_lr.set_ylabel('PDF')
     ax_clr = fig.add_subplot(2,1,2)
     ax_clr.hlines([0.025, 0.05, 0.5, 0.95, 0.975], 0, 20)
@@ -21,7 +22,7 @@ def plot_ij(axes, i, j, prior=0.5, fmt=None, label=None):
     i += prior
     j += prior
     ax_lr, ax_clr = axes
-    percents = [p / 4.0 for p in xrange(81)]
+    percents = [p / 10.0 for p in xrange(201)]
     ax_lr.plot(percents, failfast.series_LR([p / 100.0 for p in percents], i, j), fmt, label=label)
     ax_clr.plot(percents, failfast.series_CLR([p / 100.0 for p in percents], i, j), fmt, label=label)
 
