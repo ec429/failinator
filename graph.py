@@ -43,5 +43,6 @@ if __name__ == "__main__":
     plot_rkt(axes, rocket.DeltaIV, '#ffbf7f')
     plot_rkt(axes, rocket.Antares, '#5f5fff')
     plot_rkt(axes, rocket.Pegasus, '#5fff5f')
+    plot_rkt(axes, rocket.LongM2, '#7f0000')
     axes[0].legend()
     plt.show()

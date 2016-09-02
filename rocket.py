@@ -26,7 +26,8 @@ Antares = RocketFamily(5, 1, 'Antares')
 Pegasus = RocketFamily(42, 4, 'Pegasus') # Counting Flight 2 but not Flight 5
 PSLV = RocketFamily(36, 2, 'PSLV')
 GSLV = RocketFamily(9, 5, 'GSLV') # includes F04
+LongM2 = RocketFamily(74, 4, 'Long March 2')
 
-families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane5, DeltaII, DeltaIV, Antares, Pegasus, PSLV, GSLV]
+families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane5, DeltaII, DeltaIV, Antares, Pegasus, PSLV, GSLV, LongM2]
 
 by_name = dict((rkt.name, rkt) for rkt in families)
