@@ -40,6 +40,7 @@ if __name__ == "__main__":
     plot_rkt(axes, rocket.Ariane5, '#ff7f00')
     plot_rkt(axes, rocket.DeltaII, '0.5')
     plot_rkt(axes, rocket.DeltaIV, '#ffbf7f')
-    plot_rkt(axes, rocket.Antares, '#7f7fff')
+    plot_rkt(axes, rocket.Antares, '#5f5fff')
+    plot_rkt(axes, rocket.Pegasus, '#5fff5f')
     axes[0].legend()
     plt.show()
