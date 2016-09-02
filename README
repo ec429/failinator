@@ -17,3 +17,5 @@ probability that one family is more reliable than the other.
 Usage looks like this:
 $ ./compare.py "Falcon 9" "Shuttle"
 (the quoting is necessary for rockets with spaces in their names!)
+Alternatively, you can pass just a single family, and it will compare that
+family to every other family in the list.

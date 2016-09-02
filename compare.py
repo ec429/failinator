@@ -24,13 +24,19 @@ def get_rocket_by_name(name):
     sys.exit(1)
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
-        print >>sys.stderr, "Usage: compare <family> <other_family>"
+    if len(sys.argv) == 2:
+        first = get_rocket_by_name(sys.argv[1])
+        for second in rocket.by_name.values():
+            if second == first: continue
+            left, right = compare(first, second)
+            print "%s %1.3f%% vs %s %1.3f%%"%(first.name, left * 100.0, second.name, right * 100.0)
+    elif len(sys.argv) == 3:
+        first = get_rocket_by_name(sys.argv[1])
+        second = get_rocket_by_name(sys.argv[2])
+        left, right = compare(first, second)
+        #print "%s better: %1.3f%%"%(first.name, left * 100.0)
+        #print "%s better: %1.3f%%"%(second.name, right * 100.0)
+        print "%s %1.3f%% vs %s %1.3f%%"%(first.name, left * 100.0, second.name, right * 100.0)
+    else:
+        print >>sys.stderr, "Usage: compare <family> [<other_family>]"
         sys.exit(1)
-
-    first = get_rocket_by_name(sys.argv[1])
-    second = get_rocket_by_name(sys.argv[2])
-    left, right = compare(first, second)
-    #print "%s better: %1.3f%%"%(first.name, left * 100.0)
-    #print "%s better: %1.3f%%"%(second.name, right * 100.0)
-    print "%s %1.3f%% vs %s %1.3f%%"%(first.name, left * 100.0, second.name, right * 100.0)
