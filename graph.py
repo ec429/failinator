@@ -33,6 +33,7 @@ if __name__ == "__main__":
     axes = setup_plot()
     plot_rkt(axes, rocket.Falcon9, 'b')
     plot_rkt(axes, rocket.Shuttle, 'g')
+    plot_rkt(axes, rocket.ProtonK, '#ffbfbf')
     plot_rkt(axes, rocket.ProtonM, 'r')
     plot_rkt(axes, rocket.Soyuz2, 'm')
     plot_rkt(axes, rocket.SoyuzFG, 'k')

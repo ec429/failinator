@@ -14,6 +14,7 @@ class RocketFamily(object):
 
 Falcon9 = RocketFamily(29, 2, 'Falcon 9')
 Shuttle = RocketFamily(135, 2, 'Shuttle')
+ProtonK = RocketFamily(365, 47, 'Proton-K')
 ProtonM = RocketFamily(98, 10, 'Proton-M')
 Soyuz2 = RocketFamily(62, 5, 'Soyuz-2')
 SoyuzFG = RocketFamily(56, 0, 'Soyuz FG')
@@ -30,6 +31,6 @@ GSLV = RocketFamily(9, 5, 'GSLV') # includes F04
 LongM2 = RocketFamily(74, 4, 'Long March 2')
 HIIA = RocketFamily(30, 1, 'H-IIA')
 
-families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane4, Ariane5, DeltaII, DeltaIV, Antares, Pegasus, PSLV, GSLV, LongM2, HIIA]
+families = [Falcon9, Shuttle, ProtonK, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane4, Ariane5, DeltaII, DeltaIV, Antares, Pegasus, PSLV, GSLV, LongM2, HIIA]
 
 by_name = dict((rkt.name, rkt) for rkt in families)
