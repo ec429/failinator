@@ -26,7 +26,7 @@ def get_rocket_by_name(name):
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         first = get_rocket_by_name(sys.argv[1])
-        for second in rocket.by_name.values():
+        for second in rocket.families:
             if second == first: continue
             left, right = compare(first, second)
             print "%s %1.3f%% vs %s %1.3f%%"%(first.name, left * 100.0, second.name, right * 100.0)
