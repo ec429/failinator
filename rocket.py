@@ -19,6 +19,7 @@ Soyuz2 = RocketFamily(62, 5, 'Soyuz-2')
 SoyuzFG = RocketFamily(56, 0, 'Soyuz FG')
 SoyuzU = RocketFamily(784, 20, 'Soyuz U')
 AtlasV = RocketFamily(64, 1, 'Atlas V')
+Ariane4 = RocketFamily(116, 3, 'Ariane 4')
 Ariane5 = RocketFamily(87, 4, 'Ariane 5')
 DeltaII = RocketFamily(153, 2, 'Delta II')
 DeltaIV = RocketFamily(33, 1, 'Delta IV') # DemoSat reached incorrect orbit
@@ -28,6 +29,6 @@ PSLV = RocketFamily(36, 2, 'PSLV')
 GSLV = RocketFamily(9, 5, 'GSLV') # includes F04
 LongM2 = RocketFamily(74, 4, 'Long March 2')
 
-families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane5, DeltaII, DeltaIV, Antares, Pegasus, PSLV, GSLV, LongM2]
+families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane4, Ariane5, DeltaII, DeltaIV, Antares, Pegasus, PSLV, GSLV, LongM2]
 
 by_name = dict((rkt.name, rkt) for rkt in families)
