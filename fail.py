@@ -19,27 +19,51 @@ def intL(x, i, j, debug=False):
     if debug:
         print "t coeff  ex     term   s"
     for t in xrange(j - i + 1):
-        # (-1)^t * (j - i choose t) * x^(j+1-t) / (j+1-t)
         coeff = nCr(j - i, t)
         if t % 2:
             coeff *= -1
         ex = i + t + 1
-        term = coeff * pow(x, ex) / float(ex)
+        term = coeff * pow(x, t) / float(ex)
         s += term
         if debug:
             print "%d %+.3f %+.3f %+.3f %+.3f"%(t, coeff, ex, term, s)
-    return s
+    return s * pow(x, i + 1)
+
+def intLat1(i, j, debug=False):
+    # Setting x = 1 makes us more efficient and accurate
+    # More efficient because skips the exponentiation step; 1^ex == 1
+    # More accurate because uses rational fractions
+    s = Fraction(0, 1)
+    if debug:
+        print "t coeff  ex     term   s"
+    for t in xrange(j - i + 1):
+        coeff = nCr(j - i, t)
+        if t % 2:
+            coeff *= -1
+        ex = i + t + 1
+        term = Fraction(coeff, ex)
+        s += term
+        if debug:
+            print "%d %+.3f %+.3f %+.3f %+.3f"%(t, coeff, ex, term, s)
+    return float(s)
+
+def intL0to1(i, j, debug=False):
+    if i * 2 < j: # few failures, flip round for speed
+        return intLat1(j - i, j, debug)
+    return intLat1(i, j, debug)
 
 def CLR(x, i, j, integral, debug=False):
+    if i * 2 < j: # few failures, flip round for speed
+        return 1.0 - intL(1.0 - x, j - i, j, debug) / float(integral)
     return intL(x, i, j, debug) / float(integral)
 
 def series_CLR(ser, i, j, debug=False):
-    integral = intL(1.0, i, j, debug)
+    integral = intL0to1(i, j, debug)
     return [CLR(x, i, j, integral, debug) for x in ser]
 
 def LR(x, i, j, integral, debug=False):
     return L(x, i, j, debug) / float(integral)
 
 def series_LR(ser, i, j, debug=False):
-    integral = intL(1.0, i, j, debug)
+    integral = intL0to1(i, j, debug)
     return [LR(x, i, j, integral, debug) for x in ser]
