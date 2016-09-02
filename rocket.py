@@ -22,7 +22,8 @@ AtlasV = RocketFamily(64, 1, 'Atlas V')
 Ariane5 = RocketFamily(87, 4, 'Ariane 5')
 DeltaII = RocketFamily(153, 2, 'Delta II')
 DeltaIV = RocketFamily(33, 1, 'Delta IV') # DemoSat reached incorrect orbit
+Antares = RocketFamily(5, 1, 'Antares')
 
-families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane5, DeltaII, DeltaIV]
+families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane5, DeltaII, DeltaIV, Antares]
 
 by_name = dict((rkt.name, rkt) for rkt in families)
