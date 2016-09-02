@@ -38,6 +38,7 @@ if __name__ == "__main__":
     plot_rkt(axes, rocket.Soyuz2, 'm')
     plot_rkt(axes, rocket.SoyuzFG, 'k')
     plot_rkt(axes, rocket.SoyuzU, 'c')
+    plot_rkt(axes, rocket.Zenit, '#ff7fff')
     plot_rkt(axes, rocket.AtlasV, 'y')
     plot_rkt(axes, rocket.Ariane4, '#9f7f00')
     plot_rkt(axes, rocket.Ariane5, '#ff7f00')
