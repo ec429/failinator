@@ -7,7 +7,7 @@ def LR(p, i, j):
     return beta.pdf(p, i, j)
 
 def CLR(x, i, j):
-	return beta.cdf(x, i, j)
+    return beta.cdf(x, i, j)
 
 def series_CLR(ser, i, j):
     return [CLR(x, i, j) for x in ser]

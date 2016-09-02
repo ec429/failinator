@@ -1,10 +1,10 @@
 #! /usr/bin/python
 
 class RocketFamily(object):
-	def __init__(self, launches, failures, name):
-		self.name = name
-		self.launches = launches
-		self.failures = failures
+    def __init__(self, launches, failures, name):
+        self.name = name
+        self.launches = launches
+        self.failures = failures
 
 Falcon9 = RocketFamily(29, 2, 'Falcon 9')
 Shuttle = RocketFamily(135, 2, 'Shuttle')
