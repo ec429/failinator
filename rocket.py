@@ -16,3 +16,5 @@ AtlasV = RocketFamily(64, 1, 'Atlas V')
 Ariane5 = RocketFamily(87, 4, 'Ariane 5')
 
 families = [Falcon9, Shuttle, ProtonM, Soyuz2, SoyuzFG, SoyuzU, AtlasV, Ariane5]
+
+by_name = dict((rkt.name, rkt) for rkt in families)
