@@ -1,6 +1,7 @@
 #! /usr/bin/python
 
 import failfast
+import rocket
 import matplotlib.pyplot as plt
 
 def setup_plot():
@@ -24,15 +25,18 @@ def plot_ij(axes, i, j, prior=0.5, fmt=None, label=None):
 	ax_lr.plot(percents, failfast.series_LR([p / 100.0 for p in percents], i, j), fmt, label=label)
 	ax_clr.plot(percents, failfast.series_CLR([p / 100.0 for p in percents], i, j), fmt, label=label)
 
+def plot_rkt(axes, rkt, fmt):
+	plot_ij(axes, rkt.failures, rkt.launches, fmt=fmt, label=rkt.name)
+
 if __name__ == "__main__":
 	axes = setup_plot()
-	plot_ij(axes, 2, 29, fmt='b', label='Falcon 9')
-	plot_ij(axes, 2, 135, fmt='g', label='Shuttle')
-	plot_ij(axes, 10, 98, fmt='r', label='Proton-M')
-	plot_ij(axes, 5, 62, fmt='m', label='Soyuz-2')
-	plot_ij(axes, 0, 56, fmt='k', label='Soyuz FG')
-	plot_ij(axes, 20, 784, fmt='c', label='Soyuz U')
-	plot_ij(axes, 1, 64, fmt='y', label='Atlas V')
-	plot_ij(axes, 4, 87, fmt='#ff7f00', label='Ariane 5')
+	plot_rkt(axes, rocket.Falcon9, 'b')
+	plot_rkt(axes, rocket.Shuttle, 'g')
+	plot_rkt(axes, rocket.ProtonM, 'r')
+	plot_rkt(axes, rocket.Soyuz2, 'm')
+	plot_rkt(axes, rocket.SoyuzFG, 'k')
+	plot_rkt(axes, rocket.SoyuzU, 'c')
+	plot_rkt(axes, rocket.AtlasV, 'y')
+	plot_rkt(axes, rocket.Ariane5, '#ff7f00')
 	axes[0].legend()
 	plt.show()
