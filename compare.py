@@ -21,6 +21,7 @@ def get_rocket_by_name(name):
 	if name in rocket.by_name:
 		return rocket.by_name[name]
 	print >>sys.stderr, "No such rocket family", name
+	sys.exit(1)
 
 if __name__ == '__main__':
 	if len(sys.argv) != 3:
