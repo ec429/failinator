@@ -1,0 +1,19 @@
+failinator computes statistics regarding the failure rates of various families
+of orbital launch vehicles.
+It is licensed under the GNU GPL version 2.
+
+The model is that launches of a given rocket family are independent Bernoulli
+trials with an unknown parameter p; the prior used for this parameter is the
+Beta(½, ½) distribution.  Thus if a rocket has launched L times with F failures,
+the posterior distribution is Beta(F + ½, L + ½ - F).
+
+There are two output tools: graph.py and compare.py
+
+graph.py will draw graphs of the PDF and CDF of the posterior distribution for
+each rocket family.
+
+compare.py takes two arguments, the names of rocket families, and computes the
+probability that one family is more reliable than the other.
+Usage looks like this:
+$ ./compare.py "Falcon 9" "Shuttle"
+(the quoting is necessary for rockets with spaces in their names!)
