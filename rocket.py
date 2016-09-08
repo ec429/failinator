@@ -28,7 +28,7 @@ DeltaIV = RocketFamily(33, 1, 'Delta IV') # DemoSat reached incorrect orbit
 Antares = RocketFamily(5, 1, 'Antares')
 Pegasus = RocketFamily(42, 4, 'Pegasus') # Counting Flight 2 but not Flight 5
 PSLV = RocketFamily(36, 2, 'PSLV')
-GSLV = RocketFamily(9, 5, 'GSLV') # includes F04
+GSLV = RocketFamily(10, 5, 'GSLV') # includes F04
 LongM2 = RocketFamily(74, 4, 'Long March 2')
 HIIA = RocketFamily(30, 1, 'H-IIA')
 
